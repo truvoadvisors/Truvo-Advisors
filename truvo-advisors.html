@@ -1,0 +1,2280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Truvo Advisors — Your Growth. Our Expertise. Shared Success.</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Outfit:wght@300;400;500;600&family=Montserrat:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --navy: #0A1628;
+      --navy-mid: #0f1f3d;
+      --navy-light: #162848;
+      --gold: #C9A84C;
+      --gold-light: #E8C96A;
+      --gold-pale: #f5e9c8;
+      --white: #ffffff;
+      --off-white: #F7F5F0;
+      --gray: #6B7280;
+      --light-gray: #e8e6e0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--white);
+      color: var(--navy);
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      /* background: rgba(10, 22, 40, 0.97); */
+      background-color: #ffffffe2;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+    }
+
+    .nav-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-mark {
+      width: 56px;
+      height: 56px;
+      position: relative;
+    }
+
+    .logo-mark svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 2px;
+    }
+
+    .logo-sub {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.55rem;
+      color: var(--gold);
+      letter-spacing: 4px;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      /* color: rgba(255, 255, 255, 0.8); */
+      color:black;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      transition: color 0.3s;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 10px 24px;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      transition: all 0.3s;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 72px;
+      left: 0;
+      width: 100%;
+      background: var(--navy);
+      z-index: 999;
+      padding: 1.5rem 2rem;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .mobile-menu .mob-cta {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 12px 24px;
+      border-radius: 4px;
+      text-align: center;
+      font-weight: 700;
+      margin-top: 0.5rem;
+      border: none;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      background: var(--navy);
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #0A1628 0%, #0f1f3d 50%, #0A1628 100%);
+    }
+
+    .hero-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      background-image: repeating-linear-gradient(0deg, var(--gold) 0, var(--gold) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(90deg, var(--gold) 0, var(--gold) 1px, transparent 1px, transparent 60px);
+    }
+
+    .hero-glow {
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(201, 168, 76, 0.08) 0%, transparent 70%);
+    }
+
+    .hero-glow2 {
+      position: absolute;
+      bottom: -200px;
+      left: -100px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(201, 168, 76, 0.05) 0%, transparent 70%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      padding-top: 72px;
+    }
+
+    .hero-left {
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(201, 168, 76, 0.1);
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      padding: 8px 16px;
+      border-radius: 100px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-badge span {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 2px;
+    }
+
+    .hero-badge-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    h1.hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+    }
+
+    h1.hero-title .gold {
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.65);
+      margin-bottom: 2rem;
+      font-weight: 400;
+      line-height: 1.7;
+      max-width: 480px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 14px 32px;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: all 0.3s;
+      display: inline-block;
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(201, 168, 76, 0.3);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(201, 168, 76, 0.5);
+      color: var(--gold);
+      padding: 14px 32px;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: all 0.3s;
+      display: inline-block;
+    }
+
+    .btn-outline:hover {
+      background: rgba(201, 168, 76, 0.1);
+      border-color: var(--gold);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .hero-stat {
+      text-align: center;
+    }
+
+    .hero-stat .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .hero-stat .lbl {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.5);
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 1px;
+      margin-top: 4px;
+    }
+
+    .hero-stat-div {
+      width: 1px;
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .hero-right {
+      animation: fadeUp 0.8s ease 0.2s both;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(201, 168, 76, 0.15);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: all 0.3s;
+    }
+
+    .hero-card:hover {
+      background: rgba(201, 168, 76, 0.06);
+      border-color: rgba(201, 168, 76, 0.3);
+      transform: translateX(4px);
+    }
+
+    .hero-card-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(201, 168, 76, 0.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .hero-card-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .hero-card h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 2px;
+    }
+
+    .hero-card p {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* SECTION BASE */
+    section {
+      padding: 80px 2rem;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .section-title .gold {
+      color: var(--gold);
+    }
+
+    .section-desc {
+      font-size: 1rem;
+      color: var(--gray);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    .section-head {
+      margin-bottom: 3.5rem;
+    }
+
+    .divider {
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+      margin: 1rem 0 1.5rem;
+    }
+
+    /* SERVICES */
+    #services {
+      background: var(--off-white);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--light-gray);
+      border-radius: 8px;
+      padding: 2rem;
+      transition: all 0.3s;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(10, 22, 40, 0.1);
+      border-color: rgba(201, 168, 76, 0.3);
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .service-card-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(201, 168, 76, 0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .service-card-icon svg {
+      width: 26px;
+      height: 26px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+    }
+
+    .service-card p {
+      font-size: 0.88rem;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    .service-card .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 1rem;
+    }
+
+    .tag {
+      font-size: 0.72rem;
+      background: rgba(201, 168, 76, 0.1);
+      color: var(--navy);
+      padding: 4px 10px;
+      border-radius: 100px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    /* TABS */
+    #detailed {
+      background: var(--navy);
+    }
+
+    #detailed .section-title {
+      color: var(--white);
+    }
+
+    .tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 2.5rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .tab-btn {
+      padding: 14px 20px;
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      color: rgba(255, 255, 255, 0.5);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.3s;
+    }
+
+    .tab-btn.active,
+    .tab-btn:hover {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .detail-box {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+
+    .detail-box h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    .detail-box ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .detail-box ul li {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.75);
+      padding-left: 16px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .detail-box ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 5px;
+      height: 5px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    /* ADVISORY */
+    #advisory {
+      background: var(--white);
+    }
+
+    .advisory-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .advisory-card {
+      border: 1px solid var(--light-gray);
+      border-radius: 8px;
+      padding: 1.75rem;
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .advisory-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 4px 20px rgba(201, 168, 76, 0.1);
+    }
+
+    .adv-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: rgba(201, 168, 76, 0.15);
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      line-height: 1;
+    }
+
+    .advisory-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .advisory-card p {
+      font-size: 0.85rem;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    /* INDUSTRIES */
+    #industries {
+      background: var(--off-white);
+    }
+
+    .industry-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+    }
+
+    .industry-item {
+      background: var(--white);
+      border: 1px solid var(--light-gray);
+      border-radius: 8px;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .industry-item:hover {
+      border-color: var(--gold);
+      background: rgba(201, 168, 76, 0.03);
+      transform: translateY(-2px);
+    }
+
+    .industry-item svg {
+      width: 36px;
+      height: 36px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.5;
+      margin: 0 auto 0.75rem;
+      display: block;
+    }
+
+    .industry-item p {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--navy);
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 0.3px;
+    }
+
+    /* BRANDING */
+    #branding {
+      background: var(--navy);
+    }
+
+    #branding .section-title {
+      color: var(--white);
+    }
+
+    #branding .section-desc {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .branding-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .brand-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 1.75rem;
+      transition: all 0.3s;
+    }
+
+    .brand-card:hover {
+      background: rgba(201, 168, 76, 0.06);
+      border-color: rgba(201, 168, 76, 0.3);
+    }
+
+    .brand-card svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .brand-card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .brand-card p {
+      font-size: 0.83rem;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.6;
+    }
+
+    /* LEADERSHIP */
+    #leadership {
+      background: var(--white);
+    }
+
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .leader-card {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 2rem;
+      align-items: start;
+      border: 1px solid var(--light-gray);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: all 0.3s;
+    }
+
+    .leader-card:hover {
+      box-shadow: 0 8px 40px rgba(10, 22, 40, 0.1);
+      border-color: rgba(201, 168, 76, 0.3);
+    }
+
+    .leader-photo {
+      width: 200px;
+      height: 240px;
+      border-radius: 8px;
+      background: var(--navy);
+      overflow: hidden;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .leader-photo-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 1rem;
+    }
+
+    .leader-photo-placeholder svg {
+      width: 80px;
+      height: 80px;
+      stroke: rgba(201, 168, 76, 0.4);
+      fill: none;
+      stroke-width: 1;
+    }
+
+    .leader-gold-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gold);
+    }
+
+    .leader-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .leader-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 2px;
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .leader-points {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 1.5rem;
+    }
+
+    .leader-points li {
+      font-size: 0.85rem;
+      color: var(--gray);
+      padding-left: 16px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .leader-points li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 5px;
+      height: 5px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    .leader-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .leader-contact a {
+      font-size: 0.82rem;
+      color: var(--navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s;
+    }
+
+    .leader-contact a:hover {
+      color: var(--gold);
+    }
+
+    .leader-contact svg {
+      width: 15px;
+      height: 15px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 2;
+      flex-shrink: 0;
+    }
+
+    /* QUOTE */
+    .quote-section {
+      background: var(--navy);
+      padding: 80px 2rem;
+      text-align: center;
+    }
+
+    .quote-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 8rem;
+      color: var(--gold);
+      opacity: 0.15;
+      line-height: 0.5;
+      margin-bottom: 1rem;
+    }
+
+    .quote-text {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+      color: var(--white);
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+
+    .quote-text em {
+      color: var(--gold);
+      font-style: normal;
+    }
+
+    /* CONTACT */
+    #contact {
+      background: var(--off-white);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-form {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2.5rem;
+      border: 1px solid var(--light-gray);
+    }
+
+    .contact-form h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-form p {
+      font-size: 0.88rem;
+      color: var(--gray);
+      margin-bottom: 2rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--navy);
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--light-gray);
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-family: 'Outfit', sans-serif;
+      color: var(--navy);
+      background: var(--white);
+      transition: border 0.3s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .contact-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-info p {
+      font-size: 0.9rem;
+      color: var(--gray);
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    .contact-persons {
+      display: flex;
+      /* width: 100%; */
+      /* flex-direction: column; */
+      gap: 1.5rem;
+    }
+
+    .contact-person {
+      background: var(--white);
+      border: 1px solid var(--light-gray);
+      border-radius: 8px;
+      width: 100%;
+      padding: 1.5rem;
+    }
+
+    .contact-person h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+
+    .contact-person .role {
+      font-size: 0.75rem;
+      color: var(--gold);
+      font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .contact-links a {
+      font-size: 0.85rem;
+      color: var(--gray);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.3s;
+    }
+
+    .contact-links a:hover {
+      color: var(--gold);
+    }
+
+    .contact-links svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 2;
+      flex-shrink: 0;
+    }
+
+    .contact-web {
+      margin-top: 1.5rem;
+      padding: 1.25rem;
+      background: var(--navy);
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .contact-web a {
+      color: var(--gold);
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .social-bar {
+      display: flex;
+      gap: 12px;
+      margin-top: 1rem;
+      justify-content: center;
+    }
+
+    .social-btn {
+      width: 38px;
+      height: 38px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .social-btn:hover {
+      background: var(--gold);
+    }
+
+    .social-btn svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--white);
+      fill: none;
+      stroke-width: 2;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #060e1c;
+      padding: 3rem 2rem 2rem;
+    }
+
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand p {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.45);
+      line-height: 1.7;
+      margin-top: 1rem;
+      max-width: 280px;
+    }
+
+    .footer-col h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 3px;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-col ul a {
+      font-size: 0.83rem;
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-col ul a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-bottom p {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .footer-logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 3px;
+    }
+
+    .footer-logo-sub {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.45rem;
+      color: var(--gold);
+      letter-spacing: 4px;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.4;
+      }
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* BACK TO TOP */
+    .back-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 44px;
+      height: 44px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      transition: all 0.3s;
+      z-index: 100;
+      border: none;
+    }
+
+    .back-top.show {
+      opacity: 1;
+    }
+
+    .back-top svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--navy);
+      fill: none;
+      stroke-width: 2.5;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:900px) {
+
+      .nav-links,
+      .nav-cta {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-right {
+        display: none;
+      }
+
+      .leadership-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .leader-card {
+        grid-template-columns: 1fr;
+      }
+
+      .leader-photo {
+        width: 100%;
+        height: 200px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media(max-width:600px) {
+      .hero-stats {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .leader-photo-placeholder {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      /* keeps responsive height automatically */
+      overflow: hidden;
+      border-radius: 10px;
+      /* optional */
+    }
+
+    .leader-photo-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .logo-mark img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  /* padding-top: 10px; */
+  /* padding-bottom: 20px; */
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <div class="logo-mark">
+          <!-- <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 4 L34 16 L34 16" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round" fill="none" />
+            <path d="M6 16 L20 4 L34 16" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round" fill="none" />
+            <circle cx="20" cy="22" r="8" stroke="#C9A84C" stroke-width="2" fill="none" />
+          </svg> -->
+          <!-- <div class="logo-mark">
+          <img src="images/logo.png" alt="Truvo Logo">
+        </div> -->
+          <!-- <a href="#" class="nav-logo">
+            <div class="logo-mark"> -->
+              <img src="images/logo.png" alt="Truvo Logo">
+            <!-- </div>
+          </a> -->
+        </div>
+        <!-- <div>
+          <div class="logo-text">TRUVO</div>
+          <div class="logo-sub">ADVISORS</div>
+        </div> -->
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#advisory">Advisory</a></li>
+        <li><a href="#industries">Industries</a></li>
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">GET STARTED</a>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services" onclick="toggleMenu()">Services</a>
+    <a href="#advisory" onclick="toggleMenu()">Advisory</a>
+    <a href="#industries" onclick="toggleMenu()">Industries</a>
+    <a href="#leadership" onclick="toggleMenu()">Leadership</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+    <a href="#contact" class="mob-cta" onclick="toggleMenu()">Get Started</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-pattern"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-glow2"></div>
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          <span>ONE STOP ADVISORY & COMPLIANCE PARTNER</span>
+        </div>
+        <h1 class="hero-title">Your Growth.<br><span class="gold">Our Expertise.</span><br>Shared Success.</h1>
+        <p class="hero-sub">Strategic advisory and compliance solutions for Startups, SMEs and Corporates. Building
+          businesses. Creating value.</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn-gold">GET FREE CONSULTATION</a>
+          <a href="#services" class="btn-outline">EXPLORE SERVICES</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="num">250K+</div>
+            <div class="lbl">Social Community</div>
+          </div>
+          <div class="hero-stat-div"></div>
+          <div class="hero-stat">
+            <div class="num">360°</div>
+            <div class="lbl">Solutions</div>
+          </div>
+          <div class="hero-stat-div"></div>
+          <div class="hero-stat">
+            <div class="num">100%</div>
+            <div class="lbl">Client First</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-card">
+          <div class="hero-card-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <div>
+            <h3>Tax & Litigation</h3>
+            <p>GST, Income Tax, Appeals & TDS Compliance</p>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+          </div>
+          <div>
+            <h3>Corporate & Secretarial</h3>
+            <p>Incorporation, ROC, NCLT & Compliance</p>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+            </svg>
+          </div>
+          <div>
+            <h3>Startup & Fundraising</h3>
+            <p>Pitch Decks, Due Diligence, Funding Advisory</p>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
+            </svg>
+          </div>
+          <div>
+            <h3>Global Expansion</h3>
+            <p>UAE, Singapore, USA, UK, Canada & More</p>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+            </svg>
+          </div>
+          <div>
+            <h3>IP & Brand Protection</h3>
+            <p>Trademark, Patent, Copyright, Design</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="section-head fade-up">
+        <span class="section-label">What We Do</span>
+        <h2 class="section-title">Our <span class="gold">Services</span></h2>
+        <div class="divider"></div>
+        <p class="section-desc">Comprehensive advisory and compliance solutions tailored for businesses at every stage
+          of growth.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card fade-up">
+          <div class="service-card-icon"><svg viewBox="0 0 24 24">
+              <path d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z" />
+            </svg></div>
+          <h3>Taxation & Litigation</h3>
+          <p>Complete GST and Income Tax solutions including registration, filing, audit support, and litigation
+            representation.</p>
+          <div class="tags"><span class="tag">GST</span><span class="tag">Income Tax</span><span
+              class="tag">TDS</span><span class="tag">Appeals</span></div>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-card-icon"><svg viewBox="0 0 24 24">
+              <path
+                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg></div>
+          <h3>Corporate & Secretarial</h3>
+          <p>Company incorporation, ROC filings, secretarial compliance, board meetings, share allotment, and NCLT
+            matters.</p>
+          <div class="tags"><span class="tag">Pvt Ltd</span><span class="tag">LLP</span><span
+              class="tag">ROC</span><span class="tag">NCLT</span></div>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-card-icon"><svg viewBox="0 0 24 24">
+              <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+            </svg></div>
+          <h3>Startup & Fundraising</h3>
+          <p>End-to-end startup advisory including registration, DPIIT recognition, pitch decks, valuation, and funding
+            support.</p>
+          <div class="tags"><span class="tag">DPIIT</span><span class="tag">Funding</span><span class="tag">Due
+              Diligence</span></div>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-card-icon"><svg viewBox="0 0 24 24">
+              <path
+                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064" />
+            </svg></div>
+          <h3>Global Expansion</h3>
+          <p>Company incorporation across UAE, Singapore, USA, UK & Canada with full international tax and FEMA
+            compliance.</p>
+          <div class="tags"><span class="tag">UAE</span><span class="tag">Singapore</span><span
+              class="tag">USA</span><span class="tag">FEMA</span></div>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-card-icon"><svg viewBox="0 0 24 24">
+              <path
+                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138" />
+            </svg></div>
+          <h3>Intellectual Property</h3>
+          <p>Full-spectrum IP protection including trademark, patent, copyright, and design registration with
+            enforcement support.</p>
+          <div class="tags"><span class="tag">Trademark</span><span class="tag">Patent</span><span
+              class="tag">Copyright</span></div>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-card-icon"><svg viewBox="0 0 24 24">
+              <path
+                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg></div>
+          <h3>Business Support</h3>
+          <p>Digital signatures, payroll processing, professional tax, labour law, MSME/Udyam registration, and
+            secretarial audit.</p>
+          <div class="tags"><span class="tag">Payroll</span><span class="tag">MSME</span><span class="tag">Labour
+              Law</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAILED SERVICES -->
+  <section id="detailed">
+    <div class="container">
+      <div class="section-head fade-up">
+        <span class="section-label">In Detail</span>
+        <h2 class="section-title" style="color:var(--white);">Service <span class="gold">Breakdown</span></h2>
+        <div class="divider"></div>
+      </div>
+      <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab(event,'t1')">TAXATION</button>
+        <button class="tab-btn" onclick="switchTab(event,'t2')">CORPORATE</button>
+        <button class="tab-btn" onclick="switchTab(event,'t3')">STARTUP</button>
+        <button class="tab-btn" onclick="switchTab(event,'t4')">GLOBAL</button>
+        <button class="tab-btn" onclick="switchTab(event,'t5')">IP SERVICES</button>
+        <button class="tab-btn" onclick="switchTab(event,'t6')">BUSINESS SUPPORT</button>
+      </div>
+      <div id="t1" class="tab-content active">
+        <div class="detail-box">
+          <h4>GST</h4>
+          <ul>
+            <li>GST Registration</li>
+            <li>GST Return Filing</li>
+            <li>GST Audit & Support</li>
+            <li>GST Litigation</li>
+            <li>GST Notices & Appeals</li>
+            <li>GST Advisory & Refunds</li>
+          </ul>
+        </div>
+        <div class="detail-box">
+          <h4>Income Tax</h4>
+          <ul>
+            <li>ITR Filing (Individuals, HUF, Companies)</li>
+            <li>Tax Planning & Advisory</li>
+            <li>Assessment & Scrutiny</li>
+            <li>Appeals & Litigations</li>
+            <li>TDS Compliance</li>
+          </ul>
+        </div>
+      </div>
+      <div id="t2" class="tab-content">
+        <div class="detail-box">
+          <h4>Incorporation</h4>
+          <ul>
+            <li>Private Limited Company</li>
+            <li>LLP Incorporation</li>
+            <li>OPC Incorporation</li>
+            <li>Section 8 Company</li>
+          </ul>
+        </div>
+        <div class="detail-box">
+          <h4>Secretarial Compliances</h4>
+          <ul>
+            <li>ROC Filings</li>
+            <li>Board & Shareholder Meetings</li>
+            <li>Annual Compliance</li>
+            <li>Share Allotment & Transfers</li>
+            <li>ESOP & Sweat Equity</li>
+          </ul>
+        </div>
+        <div class="detail-box">
+          <h4>NCLT Matters</h4>
+          <ul>
+            <li>Compounding of Offences</li>
+            <li>Mergers & Amalgamations</li>
+            <li>Oppression & Mismanagement</li>
+            <li>Strike Off</li>
+            <li>Revival of Companies</li>
+          </ul>
+        </div>
+      </div>
+      <div id="t3" class="tab-content">
+        <div class="detail-box">
+          <h4>Registration & Setup</h4>
+          <ul>
+            <li>Startup India Registration</li>
+            <li>DPIIT Recognition</li>
+            <li>Business Structuring</li>
+            <li>Pitch Deck Review</li>
+          </ul>
+        </div>
+        <div class="detail-box">
+          <h4>Due Diligence & Valuation</h4>
+          <ul>
+            <li>Due Diligence</li>
+            <li>Valuation Support</li>
+            <li>Investor Documentation</li>
+            <li>Angel / VC Funding Support</li>
+          </ul>
+        </div>
+        <div class="detail-box">
+          <h4>Funding Assistance</h4>
+          <ul>
+            <li>Funding Assistance</li>
+            <li>Government Grants</li>
+            <li>ATIC Tax Exemption Certificate</li>
+            <li>Incubation Advisory</li>
+          </ul>
+        </div>
+      </div>
+      <div id="t4" class="tab-content">
+        <div class="detail-box">
+          <h4>Company Incorporation</h4>
+          <ul>
+            <li>UAE (Free Zone & Mainland)</li>
+            <li>Singapore</li>
+            <li>USA (LLC, C-Corp)</li>
+            <li>UK</li>
+            <li>Canada & More</li>
+          </ul>
+        </div>
+        <div class="detail-box">
+          <h4>International Tax & Compliance</h4>
+          <ul>
+            <li>FEMA Advisory</li>
+            <li>Overseas Direct Investment (ODI)</li>
+            <li>Cross Border Structuring</li>
+            <li>Transfer Pricing Coordination</li>
+          </ul>
+        </div>
+      </div>
+      <div id="t5" class="tab-content">
+        <div class="detail-box">
+          <h4>IP Registration</h4>
+          <ul>
+            <li>Trademark Registration</li>
+            <li>Patent Filing</li>
+            <li>Copyright Registration</li>
+            <li>Design Registration</li>
+          </ul>
+        </div>
+        <div class="detail-box">
+          <h4>IP Protection</h4>
+          <ul>
+            <li>IP Advisory & Enforcement</li>
+            <li>IP Portfolio Management</li>
+            <li>Brand Protection Strategy</li>
+          </ul>
+        </div>
+      </div>
+      <div id="t6" class="tab-content">
+        <div class="detail-box">
+          <h4>Registrations</h4>
+          <ul>
+            <li>Digital Signature Certificates</li>
+            <li>Shops & Establishment Registration</li>
+            <li>MSME & Udyam Registration</li>
+            <li>Professional Tax Registration</li>
+          </ul>
+        </div>
+        <div class="detail-box">
+          <h4>Compliance & Payroll</h4>
+          <ul>
+            <li>Payroll Processing</li>
+            <li>Labour Law Compliance</li>
+            <li>Secretarial Audit Support</li>
+            <li>No Audit Services</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADVISORY -->
+  <section id="advisory">
+    <div class="container">
+      <div class="section-head fade-up">
+        <span class="section-label">Advisory</span>
+        <h2 class="section-title">Strategic <span class="gold">Consulting</span></h2>
+        <div class="divider"></div>
+        <p class="section-desc">Expert advisory services to help you make informed decisions and build future-ready
+          businesses.</p>
+      </div>
+      <div class="advisory-grid">
+        <div class="advisory-card fade-up">
+          <span class="adv-num">01</span>
+          <h3>Advisory & Consulting</h3>
+          <p>Strategic business advice to help you make informed decisions at every stage of growth.</p>
+        </div>
+        <div class="advisory-card fade-up">
+          <span class="adv-num">02</span>
+          <h3>Taxation, Structuring & Planning</h3>
+          <p>Entity Structuring, Tax Optimization, Succession Planning, and Regulatory Planning.</p>
+        </div>
+        <div class="advisory-card fade-up">
+          <span class="adv-num">03</span>
+          <h3>Due Diligence</h3>
+          <p>Financial, Tax, Legal & Secretarial Due Diligence for Investments and Mergers & Acquisitions.</p>
+        </div>
+        <div class="advisory-card fade-up">
+          <span class="adv-num">04</span>
+          <h3>Fundraising & Investor Connect</h3>
+          <p>Connecting Startups with Investors and Building Investor Confidence through structured advisory.</p>
+        </div>
+        <div class="advisory-card fade-up">
+          <span class="adv-num">05</span>
+          <h3>Startup Services</h3>
+          <p>End-to-end Compliance and Advisory for Startups & Founders from ideation to scale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section id="industries">
+    <div class="container">
+      <div class="section-head fade-up" style="text-align:center;">
+        <span class="section-label" style="display:block;text-align:center;">Industries</span>
+        <h2 class="section-title">Industries <span class="gold">We Serve</span></h2>
+        <div class="divider" style="margin:1rem auto 1.5rem;"></div>
+        <p class="section-desc" style="margin:0 auto;text-align:center;">Trusted by businesses across diverse sectors.
+        </p>
+      </div>
+      <div class="industry-grid fade-up">
+        <div class="industry-item">
+          <svg viewBox="0 0 24 24">
+            <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+          </svg>
+          <p>Startups</p>
+        </div>
+        <div class="industry-item">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          <p>Technology</p>
+        </div>
+        <div class="industry-item">
+          <svg viewBox="0 0 24 24">
+            <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <p>E-Commerce</p>
+        </div>
+        <div class="industry-item">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+          </svg>
+          <p>Manufacturing</p>
+        </div>
+        <div class="industry-item">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+          <p>Healthcare</p>
+        </div>
+        <div class="industry-item">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+          </svg>
+          <p>Real Estate</p>
+        </div>
+        <div class="industry-item">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          <p>Professional Services</p>
+        </div>
+        <div class="industry-item">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
+          </svg>
+          <p>Import Export</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRANDING -->
+  <section id="branding">
+    <div class="container">
+      <div class="section-head fade-up">
+        <span class="section-label">Growth</span>
+        <h2 class="section-title" style="color:var(--white);">Branding & <span class="gold">Growth Assistance</span>
+        </h2>
+        <div class="divider"></div>
+        <p class="section-desc">We don't just ensure compliance — we help you build a visible, scalable brand.</p>
+      </div>
+      <div class="branding-grid">
+        <div class="brand-card fade-up">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+          </svg>
+          <h3>Content Creation</h3>
+          <p>Thought Leadership, Articles, Blogs, and Social Media Content tailored for your brand voice.</p>
+        </div>
+        <div class="brand-card fade-up">
+          <svg viewBox="0 0 24 24">
+            <path d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          <h3>Thought Marketing</h3>
+          <p>LinkedIn Strategy, Personal Branding, and Visibility Building for founders and leaders.</p>
+        </div>
+        <div class="brand-card fade-up">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+          </svg>
+          <h3>Branding</h3>
+          <p>Brand Strategy, Positioning, and Corporate Identity to establish a strong market presence.</p>
+        </div>
+        <div class="brand-card fade-up">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+          </svg>
+          <h3>Growth Assistance</h3>
+          <p>Business Advisory for Scaling & Operational Efficiency to unlock your next growth phase.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <div class="quote-section">
+    <div class="container" style="text-align:center;">
+      <div class="quote-mark">"</div>
+      <p class="quote-text">We don't just ensure compliance, we help you build a <em>future-ready business.</em></p>
+      <a href="#contact" class="btn-gold">START YOUR JOURNEY</a>
+    </div>
+  </div>
+
+  <!-- LEADERSHIP -->
+  <section id="leadership">
+    <div class="container">
+      <div class="section-head fade-up" style="text-align:center;">
+        <span class="section-label" style="text-align:center;display:block;">The Team</span>
+        <h2 class="section-title" style="text-align:center;">Meet Our <span class="gold">Leadership</span></h2>
+        <div class="divider" style="margin:1rem auto 1.5rem;"></div>
+      </div>
+      <div class="leadership-grid">
+        <div class="leader-card fade-up">
+          <div class="leader-photo">
+            <!-- <div class="leader-photo-placeholder">
+            <img src="images/CA-Shubham-Maloo.jpeg" class="w-100" alt="CA Shubham Maloo">
+          </div> -->
+            <!-- <div class="leader-photo-placeholder" style="width: 100%; height: 250px; overflow: hidden;"> -->
+            <!-- <img src="images/CA-Shubham-Maloo.jpeg" 
+       alt="CA Shubham Maloo"
+       style="width: 100%; height: 100%; object-fit: cover;">
+</div> -->
+            <!-- <div class="leader-photo-placeholder">
+  <img src="images/CA-Shubham-Maloo.jpeg" alt="CA Shubham Maloo">
+</div> -->
+            <div class="leader-photo-placeholder">
+              <img src="images/CA-Shubham-Maloo.jpeg" alt="CA Shubham Maloo">
+            </div>
+            <div class="leader-gold-bar"></div>
+          </div>
+          <div class="leader-info">
+            <h3>CA Shubham Maloo</h3>
+            <span class="leader-title">CHARTERED ACCOUNTANT</span>
+            <ul class="leader-points">
+              <li>Tax Consultant & Startup Advisor</li>
+              <li>Content Creator</li>
+              <li>250,000+ Social Media Community</li>
+              <li>Helping Businesses Grow & Scale</li>
+            </ul>
+            <div class="leader-contact">
+              <a href="tel:7016034529">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                7016034529
+              </a>
+              <a href="mailto:Shubham@truvoadvisors.com">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                Shubham@truvoadvisors.com
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="leader-card fade-up">
+          <div class="leader-photo">
+            <div class="leader-photo-placeholder">
+              <!-- <div class="leader-photo-placeholder" style="width: 100%; height: 250px; overflow: hidden;">
+                <img src="images/CA-Shubham-Maloo.jpeg" alt="CA Shubham Maloo"
+                  style="width: 100%; height: 100%; object-fit: cover;  overflow: hidden;">
+              </div> -->
+              <!-- <div class="leader-photo-placeholder"> -->
+              <img src="images/CS-Neha-Maheshwari.jpeg" alt="CS Neha Maheshwari">
+              <!-- </div> -->
+            </div>
+            <div class="leader-gold-bar"></div>
+          </div>
+          <div class="leader-info">
+            <h3>CS Neha Maheshwari</h3>
+            <span class="leader-title">COMPANY SECRETARY</span>
+            <ul class="leader-points">
+              <li>Corporate Law Expert</li>
+              <li>Secretarial Compliance Specialist</li>
+              <li>Governance & Regulatory Expert</li>
+              <li>Startup Advisory & Committed to Excellence</li>
+            </ul>
+            <div class="leader-contact">
+              <a href="tel:7726987054">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                7726987054
+              </a>
+              <a href="mailto:Neha@truvoadvisors.com">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                Neha@truvoadvisors.com
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:3rem;">
+        <p style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--navy);">Let's Build
+          Something <span style="color:var(--gold);">Great Together!</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-head fade-up">
+        <span class="section-label">Get In Touch</span>
+        <h2 class="section-title">Start Your <span class="gold">Journey</span></h2>
+        <div class="divider"></div>
+        <p class="section-desc">Tell us about your business and we'll connect you with the right expert.</p>
+      </div>
+      <div class="">
+        <!-- <div class="contact-form fade-up">
+          <h3>Send Us a Message</h3>
+          <p>We'll get back to you within 24 hours.</p>
+          <div class="form-row">
+            <div class="form-group"><label>Full Name</label><input type="text" placeholder="Your name"></div>
+            <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="+91 00000 00000"></div>
+          </div>
+          <div class="form-group"><label>Email Address</label><input type="email" placeholder="your@email.com"></div>
+          <div class="form-group">
+            <label>Service Needed</label>
+            <select>
+              <option value="">Select a service</option>
+              <option>Taxation & Litigation</option>
+              <option>Corporate & Secretarial Services</option>
+              <option>Startup & Fundraising Advisory</option>
+              <option>Global Expansion Services</option>
+              <option>Intellectual Property Services</option>
+              <option>Business Support Services</option>
+              <option>Advisory & Consulting</option>
+              <option>Branding & Growth Assistance</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Message</label><textarea
+              placeholder="Tell us about your business and requirements..."></textarea></div>
+          <button class="btn-gold"
+            style="width:100%;border:none;cursor:pointer;font-size:0.85rem;text-align:center;">SEND MESSAGE</button>
+        </div> -->
+        <div class="contact-info fade-up">
+          <h3>Direct Connect</h3>
+          <p>Reach out to our leadership directly for immediate assistance.</p>
+          <div class="contact-persons">
+            <div class="contact-person">
+              <h4>CA Shubham Maloo</h4>
+              <span class="role">CHARTERED ACCOUNTANT</span>
+              <div class="contact-links">
+                <a href="tel:7016034529"><svg viewBox="0 0 24 24">
+                    <path
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>7016034529</a>
+                <a href="mailto:Shubham@truvoadvisors.com"><svg viewBox="0 0 24 24">
+                    <path
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>Shubham@truvoadvisors.com</a>
+              </div>
+            </div>
+            <div class="contact-person">
+              <h4>CS Neha Maheshwari</h4>
+              <span class="role">COMPANY SECRETARY</span>
+              <div class="contact-links">
+                <a href="tel:7726987054"><svg viewBox="0 0 24 24">
+                    <path
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>7726987054</a>
+                <a href="mailto:Neha@truvoadvisors.com"><svg viewBox="0 0 24 24">
+                    <path
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>Neha@truvoadvisors.com</a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-web">
+            <a href="https://www.truvoadvisors.com" target="_blank">www.truvoadvisors.com</a>
+            <div class="social-bar">
+              <div class="social-btn" title="LinkedIn">
+                <a href="https://www.linkedin.com/in/shubhmaloo" target="_blank">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+                    <circle cx="4" cy="4" r="2" />
+                  </svg>
+                </a>
+              </div>
+              <div class="social-btn" title="Instagram">
+                <a href="https://www.instagram.com/ca.shubhammaloo" target="_blank">
+                  <svg viewBox="0 0 24 24">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                  </svg>
+                </a>
+              </div>
+              <div class="social-btn" title="YouTube">
+                <a href="https://youtube.com/@ca.shubhammaloo?si=HPwGdJvx8mJhg5m3" target="_blank">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z" />
+                    <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:0.5rem;">
+            <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+              <path d="M20 4 L34 16" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" />
+              <path d="M6 16 L20 4 L34 16" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <circle cx="20" cy="22" r="8" stroke="#C9A84C" stroke-width="2" fill="none" />
+            </svg>
+            <div>
+              <div class="footer-logo-text">TRUVO</div>
+              <div class="footer-logo-sub">ADVISORS</div>
+            </div>
+          </div>
+          <p>1228, Rashmi The Prime, Bopal Ambli T Junction, 380058</p>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.972467689299!2d72.4774928!3d23.0247831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b256d313c8f%3A0xe9c8c1c52952bca2!2sThe%20Prime%20Ambli%20T%20Junction!5e0!3m2!1sen!2sin!4v1780567477150!5m2!1sen!2sin"
+            width="300" height="200" style="border:0; padding-top:10px;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="footer-col">
+          <h4>SERVICES</h4>
+          <ul>
+            <li><a href="#services">Taxation & Litigation</a></li>
+            <li><a href="#services">Corporate Services</a></li>
+            <li><a href="#services">Startup Advisory</a></li>
+            <li><a href="#services">Global Expansion</a></li>
+            <li><a href="#services">IP Services</a></li>
+            <li><a href="#services">Business Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>ADVISORY</h4>
+          <ul>
+            <li><a href="#advisory">Consulting</a></li>
+            <li><a href="#advisory">Tax Planning</a></li>
+            <li><a href="#advisory">Due Diligence</a></li>
+            <li><a href="#advisory">Fundraising</a></li>
+            <li><a href="#branding">Branding</a></li>
+            <li><a href="#branding">Growth</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>CONTACT</h4>
+          <ul>
+            <li><a href="tel:7016034529">+91 7016034529</a></li>
+            <li><a href="tel:7726987054">+91 7726987054</a></li>
+            <li><a href="mailto:Shubham@truvoadvisors.com">Shubham@truvoadvisors.com</a></li>
+            <li><a href="mailto:Neha@truvoadvisors.com">Neha@truvoadvisors.com</a></li>
+            <li><a href="https://www.truvoadvisors.com" target="_blank">www.truvoadvisors.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Truvo Advisors. All rights reserved.</p>
+        <p style="color:rgba(201,168,76,0.5);font-family:'Playfair Display',serif;font-style:italic;font-size:0.82rem;">
+          Building Businesses. Creating Value.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+    <svg viewBox="0 0 24 24">
+      <path d="M5 10l7-7m0 0l7 7m-7-7v18" />
+    </svg>
+  </button>
+
+  <script>
+    function toggleMenu() { var m = document.getElementById('mobileMenu'); m.classList.toggle('open'); }
+    function switchTab(e, id) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      e.target.classList.add('active');
+      document.getElementById(id).classList.add('active');
+    }
+    var obs = new IntersectionObserver(function (entries) { entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); } }); }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up').forEach(function (el) { obs.observe(el); });
+    window.addEventListener('scroll', function () { var b = document.getElementById('backTop'); if (window.scrollY > 400) b.classList.add('show'); else b.classList.remove('show'); });
+  </script>
+</body>
+
+</html>
